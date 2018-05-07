@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link href="{% static 'styles/menu.css' %}" rel="stylesheet">
+    <link href="{% static 'styles/style.css'%}"  rel="stylesheet">
+    <script src="{% static 'scripts/jquery.js'%}"></script>
+    <script src="{% static 'scripts/site.js'%}"></script>
+    <title>{% block title %}
+
+    {% endblock %}</title>
+</head>
+<body>
+<header>
+    <div id="headerContent">
+        <div id="logo"></div>
+        <div id="companyName">Беледжи пласт</div>
+        <div id="horisontalMenu">
+            <a href="#" class="active">
+                Главная
+            </a>
+        </div>
+    </div>
+</header>
+
+<div id="content">
+{% block content %}
+
+{% endblock %}
+</div>
+<footer>
+    <div id="footerInside">
+
+        <div id="contacts">
+            <div class="contactWrap">
+                <img src="{% static 'images/shop/envelope.svg' %}" class="contactIcon">
+                info@brandshop.ru
+            </div>
+            <div class="contactWrap">
+                <img src="{% static 'images/shop/phone-call.svg' %}" class="contactIcon">
+                8 800 555 00 00
+            </div>
+            <div class="contactWrap">
+                <img src="{% static 'images/shop/placeholder.svg' %}" class="contactIcon">
+                Москва, пр-т Ленина, д. 1 офис 304
+            </div>
+        </div>
+
+        <div id="footerNav">
+            <a href="#">Главная</a>
+            <a href="#">Магазин</a>
+        </div>
+
+        <div id="social">
+            <img class="socialItem" src="{% static 'images/shop/vk-social-logotype.svg' %}">
+            <img class="socialItem" src="{% static 'images/shop/google-plus-social-logotype.svg' %}">
+            <img class="socialItem" src="{% static 'images/shop/facebook-logo.svg' %}">
+        </div>
+
+        <div id="copyrights">&copy; Brandshop</div>
+    </div>
+</footer>
+<script>
+    {% block script %}
+
+    {% endblock %}
+</script>
+
+</body>
+</html>

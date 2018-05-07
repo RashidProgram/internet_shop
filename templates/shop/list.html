@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    Список товаров
+    {% endblock %}
+{% block content %}
+         <div style="width: 1100px; margin: 0 auto">
+        <hr>
+        <h2>
+            Товары
+        </h2>
+
+        <div style="width: 1100px; margin: 0 auto">
+            <h1>
+                Каталог товаров
+            </h1>
+            <div id ='shop'>
+                {% for tovar in tovars %}
+
+                <div class="shopUnit">
+                    <img src="{% static 'images/shop/default.png' %}" />
+
+                    <div class="shopUnitName">
+                        {{ tovar.name }}
+                    </div>
+                    <div class="shopUnitShortDesc">
+                        {{ tovar.description|truncatewords:30 }}
+                    </div>
+                    <div class="shopUnitPrice">
+                       {{ tovar.cost }}
+                    </div>
+                    <a href="{% url 'shop:detail' {{ tovar.id }} %}" class="shopUnitMore">
+                        Подробнее
+                    </a>
+                {% endfor %}
+                </div>
+            </div>
+        </div>
+
+{% endblock %}
